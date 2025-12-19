@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Equipment Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1>Equipment Tracker</h1>
+    <p>Smart Equipment Management Dashboard</p>
+  </header>
+
+  <main class="container">
+
+    <!-- FORM CARD -->
+    <section class="card">
+      <h2 id="formTitle">Add Equipment</h2>
+
+      <form id="equipmentForm">
+        <input type="hidden" id="equipmentId">
+
+        <div class="form-grid">
+          <input type="text" id="name" placeholder="Equipment Name" required>
+
+          <select id="type">
+            <option>Machine</option>
+            <option>Vessel</option>
+            <option>Tank</option>
+            <option>Mixer</option>
+          </select>
+
+          <select id="status">
+            <option>Active</option>
+            <option>Inactive</option>
+            <option>Under Maintenance</option>
+          </select>
+
+          <input type="date" id="date" required>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Save</button>
+          <button type="button" class="btn secondary" onclick="resetForm()">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- TABLE CARD -->
+    <section class="card">
+      <h2>Equipment List</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Last Cleaned</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="equipmentTable"></tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
